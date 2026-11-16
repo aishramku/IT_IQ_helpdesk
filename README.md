@@ -50,11 +50,7 @@ Docker (`docker compose up`) files are included but were **not run on the author
 * **Intelligence:** duplicate merge (runs first) -> major incident detection (>= 10 **distinct** requesters in 15 min -> P1 parent, children re-prioritised with audit entry) -> recurring-issue recommendations.
 * **Audit:** every automated decision logged with timestamp, actor and reason.
 * **Feedback loop:** `POST /feedback` -> `scripts/retrain_with_feedback.py` (promotes the new model only if held-out accuracy does not drop).
-* **Dashboard (8 views):** Overview, ITSM KPIs, Trends, Incidents, Root-cause insights, Model performance, Security, Business impact; CSV export on every dataset for Power BI.
-
-![Overview](docs/screenshots/overview.png) <!-- placeholder: add screenshots -->
-![Incidents](docs/screenshots/incidents.png) <!-- placeholder -->
-![Model performance](docs/screenshots/model.png) <!-- placeholder -->
+* **Dashboard:** Overview, ITSM KPIs, Trends, Incidents, Root-cause insights, Model performance, Security, Business impact; CSV export on every dataset for Power BI.
 
 ## Results (held-out test set, 582 tickets)
 | | |
