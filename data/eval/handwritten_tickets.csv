@@ -1,0 +1,6 @@
+subject,body,true_category,true_ticket_type,true_priority
+"Can't get into my work laptop","Hi, I came back from leave today and my laptop says my password has expired and the new one I set isn't working. Can someone help me reset it? Thanks, Karthik","Access/Password","Service Request","P3"
+"Zoom call quality terrible","Every call on the 2nd floor drops and the video freezes. Other floors seem fine. Is the wifi acting up?","Network","Incident","P3"
+"Need Tableau","Hello, I need Tableau Desktop installed for the new reporting project. My manager Anil has approved. No rush.","Software","Service Request","P4"
+"Printer on 3rd floor eats paper","The big printer by the pantry keeps jamming on every second page and there are scraps stuck inside. We have a deadline today and 6 of us need to print contracts.","Printer","Incident","P2"
+"Outlook shows password prompt","Outlook has been asking for my credentials every few minutes since this morning, even after I typed the right one. Can't send anything out to clients.","Email","Incident","P3"

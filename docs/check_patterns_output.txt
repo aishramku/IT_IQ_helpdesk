@@ -1,0 +1,35 @@
+﻿Tickets: 3000   2026-08-17 -> 2026-11-14
+
+Category mix:
+true_category
+Access/Password    21.5
+Software           18.5
+Hardware           16.9
+Network            16.0
+Email              15.9
+Printer            11.2
+
+Ticket type split:
+true_ticket_type
+Incident           1922
+Service Request    1078
+
+Priority mix:
+true_priority
+P1     119
+P2     319
+P3     895
+P4    1667
+
+[VPN] tickets: 187 | Mon 09-11 avg/day: 2.85 vs Tue-Fri 09-11 avg/day: 0.65 -> 4.4x spike
+[OUTAGE] max Email tickets in any 15 min: 40 from 40 distinct requesters, starting 2026-10-06 10:12:06.244696
+[PRINTER] 337 tickets; top location Chennai-OMR = 50.7% (others <= 11.0%)
+[DUPLICATES] 30 follow-up tickets; 30 requesters involved
+[SECURITY] malicious: 20 -> {'social_engineering': 12, 'prompt_injection': 8}
+           by scenario: {'attack_injection': 8, 'attack_se_lookalike': 6, 'attack_se_freemail': 3, 'attack_se_internal': 3}
+           non-corporate sender domains: 9 -> {'gmail.com': 1, 'acmecorp.co': 1, 'acmec0rp.com': 1, 'yahoo.com': 1, 'acmecorp-support.com': 1, 'acmecorp.com.co': 1, 'acrnecorp.com': 1, 'acme-corp.com': 1, 'outlook.com': 1}
+           legitimate decoys: 25 (15 urgent execs, 10 'ignore previous' phrasing)
+
+[BASELINE] human L1 misroute rate 24.0%; avg reassignments/ticket 0.30; self-service share 11.2%
+[SLA] breach rate by priority (calendar hours): P1=21%, P2=39%, P3=17%, P4=11%
+      resolved 2919/2980; label-noise/vague text handled in Phase 2 metrics

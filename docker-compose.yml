@@ -1,0 +1,49 @@
+# docker compose up   ->  API on :8000, dashboard on :8501
+# `setup` runs once: generates data, trains the model, loads + processes the history into a shared volume.
+# NOTE: written for portability; not verified on the author's machine (Docker was not installed there).
+services:
+  setup:
+    build: .
+    command: >
+      sh -c "python -m data.generator.generate_tickets &&
+             python -m scripts.load_history --reset &&
+             python -m ml.train && python -m ml.evaluate &&
+             python -m scripts.process_backlog"
+    environment: &env
+      DATABASE_URL: sqlite:////app/data/triageiq.db
+      API_URL: http://api:8000
+    volumes:
+      - triageiq-data:/app/data
+      - triageiq-ml:/app/ml/artifacts
+
+  api:
+    build: .
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    environment: *env
+    ports: ["8000:8000"]
+    volumes:
+      - triageiq-data:/app/data
+      - triageiq-ml:/app/ml/artifacts
+    depends_on:
+      setup: {condition: service_completed_successfully}
+
+  dashboard:
+    build: .
+    command: streamlit run dashboard/Home.py --server.port 8501 --server.address 0.0.0.0 --server.headless true
+    environment: *env
+    ports: ["8501:8501"]
+    volumes:
+      - triageiq-data:/app/data
+      - triageiq-ml:/app/ml/artifacts
+    depends_on:
+      setup: {condition: service_completed_successfully}
+
+  # Optional PostgreSQL: uncomment and set DATABASE_URL=postgresql+psycopg://triageiq:triageiq@db:5432/triageiq
+  # (also add psycopg[binary] to requirements.txt). Nothing else in the code changes.
+  # db:
+  #   image: postgres:16
+  #   environment: {POSTGRES_USER: triageiq, POSTGRES_PASSWORD: triageiq, POSTGRES_DB: triageiq}
+
+volumes:
+  triageiq-data:
+  triageiq-ml:

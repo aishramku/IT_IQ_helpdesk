@@ -1,0 +1,43 @@
+﻿                 precision    recall  f1-score   support
+
+       Hardware       0.88      0.91      0.89       100
+        Network       0.85      0.92      0.88        95
+Access/Password       0.89      0.91      0.90       126
+       Software       0.86      0.83      0.85       109
+          Email       0.91      0.86      0.89        86
+        Printer       0.98      0.89      0.94        66
+
+       accuracy                           0.89       582
+      macro avg       0.90      0.89      0.89       582
+   weighted avg       0.89      0.89      0.89       582
+
+Confusion matrix (rows=true, cols=pred):
+                  Hardware  Network  Access/Password  Software  Email  Printer
+Hardware               91        1                1         4      3        0
+Network                 2       87                4         1      1        0
+Access/Password         2        4              115         3      2        0
+Software                4        6                7        91      0        1
+Email                   4        1                2         5     74        0
+Printer                 1        3                0         2      1       59
+
+Coverage vs accuracy:
+ threshold  coverage  accuracy  n_auto
+      0.50     0.921     0.950     536
+      0.55     0.919     0.951     535
+      0.60     0.911     0.955     530
+      0.65     0.905     0.954     527
+      0.70     0.899     0.956     523
+      0.75     0.885     0.959     515
+      0.80     0.859     0.958     500
+      0.85     0.806     0.962     469
+      0.90     0.454     0.955     264
+      0.95     0.000       NaN       0
+
+Chosen threshold 0.55 via rule 'accuracy_target' (auto-routed acc 0.951, coverage 0.919)
+
+Hand-written set: n=5 accuracy=80.00% n < 30: indicative only; add rows to data/eval/handwritten_tickets.csv
+[social_engineering] precision=1.0 recall=1.0 FPR(on 2980 legit)=0.0000 tp=12 fp=0 fn=0
+[prompt_injection] precision=1.0 recall=1.0 FPR(on 2980 legit)=0.0000 tp=8 fp=0 fn=0
+[combined] precision=1.0 recall=1.0 FPR(on 2980 legit)=0.0000 tp=20 fp=0 fn=0
+
+category accuracy 0.888 | macro-F1 0.891 | ticket-type acc 0.966 | priority exact 0.851 (within one 0.997) | KB hit-rate 0.863

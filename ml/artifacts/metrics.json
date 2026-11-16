@@ -1,0 +1,222 @@
+{
+  "generated_at": "2026-11-16T20:35:01",
+  "model_version": "tfidf-lr-cal-202611162034",
+  "n_test": 582,
+  "accuracy": 0.8883161512027491,
+  "macro_f1": 0.8911022478913972,
+  "ticket_type_accuracy": 0.9656357388316151,
+  "per_class": {
+    "Hardware": {
+      "precision": 0.875,
+      "recall": 0.91,
+      "f1-score": 0.8921568627450981,
+      "support": 100.0
+    },
+    "Network": {
+      "precision": 0.8529411764705882,
+      "recall": 0.9157894736842105,
+      "f1-score": 0.883248730964467,
+      "support": 95.0
+    },
+    "Access/Password": {
+      "precision": 0.8914728682170543,
+      "recall": 0.9126984126984127,
+      "f1-score": 0.9019607843137255,
+      "support": 126.0
+    },
+    "Software": {
+      "precision": 0.8584905660377359,
+      "recall": 0.8348623853211009,
+      "f1-score": 0.8465116279069768,
+      "support": 109.0
+    },
+    "Email": {
+      "precision": 0.9135802469135802,
+      "recall": 0.8604651162790697,
+      "f1-score": 0.8862275449101796,
+      "support": 86.0
+    },
+    "Printer": {
+      "precision": 0.9833333333333333,
+      "recall": 0.8939393939393939,
+      "f1-score": 0.9365079365079365,
+      "support": 66.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      91,
+      1,
+      1,
+      4,
+      3,
+      0
+    ],
+    [
+      2,
+      87,
+      4,
+      1,
+      1,
+      0
+    ],
+    [
+      2,
+      4,
+      115,
+      3,
+      2,
+      0
+    ],
+    [
+      4,
+      6,
+      7,
+      91,
+      0,
+      1
+    ],
+    [
+      4,
+      1,
+      2,
+      5,
+      74,
+      0
+    ],
+    [
+      1,
+      3,
+      0,
+      2,
+      1,
+      59
+    ]
+  ],
+  "labels": [
+    "Hardware",
+    "Network",
+    "Access/Password",
+    "Software",
+    "Email",
+    "Printer"
+  ],
+  "threshold": {
+    "value": 0.55,
+    "rule": "accuracy_target",
+    "accuracy": 0.9514018691588785,
+    "coverage": 0.9192439862542955,
+    "target_accuracy": 0.95,
+    "min_coverage": 0.6
+  },
+  "curve": [
+    {
+      "threshold": 0.5,
+      "coverage": 0.9209621993127147,
+      "accuracy": 0.9496268656716418,
+      "n_auto": 536
+    },
+    {
+      "threshold": 0.55,
+      "coverage": 0.9192439862542955,
+      "accuracy": 0.9514018691588785,
+      "n_auto": 535
+    },
+    {
+      "threshold": 0.6,
+      "coverage": 0.9106529209621993,
+      "accuracy": 0.9547169811320755,
+      "n_auto": 530
+    },
+    {
+      "threshold": 0.65,
+      "coverage": 0.9054982817869416,
+      "accuracy": 0.9544592030360531,
+      "n_auto": 527
+    },
+    {
+      "threshold": 0.7,
+      "coverage": 0.8986254295532646,
+      "accuracy": 0.9560229445506692,
+      "n_auto": 523
+    },
+    {
+      "threshold": 0.75,
+      "coverage": 0.8848797250859106,
+      "accuracy": 0.9592233009708738,
+      "n_auto": 515
+    },
+    {
+      "threshold": 0.8,
+      "coverage": 0.8591065292096219,
+      "accuracy": 0.958,
+      "n_auto": 500
+    },
+    {
+      "threshold": 0.85,
+      "coverage": 0.8058419243986255,
+      "accuracy": 0.9616204690831557,
+      "n_auto": 469
+    },
+    {
+      "threshold": 0.9,
+      "coverage": 0.4536082474226804,
+      "accuracy": 0.9545454545454546,
+      "n_auto": 264
+    },
+    {
+      "threshold": 0.95,
+      "coverage": 0.0,
+      "accuracy": null,
+      "n_auto": 0
+    }
+  ],
+  "priority": {
+    "exact": 0.8505154639175257,
+    "within_one": 0.9965635738831615
+  },
+  "kb_hit_rate": 0.8625429553264605,
+  "handwritten": {
+    "n": 5,
+    "accuracy": 0.8,
+    "ticket_type_accuracy": 1.0,
+    "mean_confidence": 0.7349509987978126,
+    "note": "n < 30: indicative only; add rows to data/eval/handwritten_tickets.csv"
+  },
+  "security": {
+    "social_engineering": {
+      "tp": 12,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate_on_legitimate": 0.0,
+      "n_legitimate": 2980,
+      "n_positive": 12
+    },
+    "prompt_injection": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate_on_legitimate": 0.0,
+      "n_legitimate": 2980,
+      "n_positive": 8
+    },
+    "combined": {
+      "tp": 20,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate_on_legitimate": 0.0,
+      "n_legitimate": 2980,
+      "n_positive": 20
+    },
+    "decoy_false_positives": [],
+    "missed": [],
+    "n_decoys": 25
+  },
+  "feedback_count": 0
+}

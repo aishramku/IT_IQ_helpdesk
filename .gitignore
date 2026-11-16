@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.pytest_cache/
+data/*.db
+data/*.db-*
+ml/artifacts/*.joblib
+data/raw/tickets.csv
+.streamlit/
+frontend/node_modules/
+frontend/dist/
+*.tsbuildinfo
