@@ -1,4 +1,4 @@
-# TriageIQ - Automated IT Helpdesk Ticket Triage & Analytics
+#IT_IQ_helpdesk - IT Helpdesk Ticket Triage & Analytics
 
 An end-to-end ITSM workflow: ingest tickets (API + inbound-email webhook), redact PII, classify (Incident vs Service Request + category), apply ITIL priority, route with a human-in-the-loop gate, suggest a KB fix, detect duplicates and **major incidents**, quarantine social-engineering / prompt-injection attempts, and give managers an analytics dashboard with a business-impact calculator.
 
